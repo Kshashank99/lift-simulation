@@ -1,12 +1,28 @@
 import React from "react";
 import { Navbar, Container, Button } from "react-bootstrap";
 
-const EachFloor = ({ Floor, TotalFloors, clickedFloor, currentFloor }) => {
+const EachFloor = ({
+	Floor,
+	TotalFloors,
+	clickedFloor,
+	currentFloor,
+	flexRight
+}) => {
 	// console.log("floor no." + Floor);
+	const floorStyle = {
+		height: "100px",
+		display: "flex",
+		flexDirection: flexRight ? "row-reverse" : "row",
+		justifyContent: "space-between"
+	};
+	// if (!flexRight) {
+	// 	floorStyle.flexDirection = "";
+	// }
+	// console.log(floorStyle);
 
 	return (
 		<>
-			<Container className='floor '>
+			<Container style={floorStyle}>
 				<div className='floor__line'>
 					{Floor !== TotalFloors ? (
 						<Button
